@@ -55,7 +55,7 @@ describe CityWeather do
     end
 
     it "should return a main pressure" do
-      expect(@weather_service.get_city_main_pressure).to be_kind_of Integer
+      expect(@weather_service.get_city_main_pressure).to be_kind_of(Float).or be_kind_of Integer
     end
 
     it "should return a main humidity" do

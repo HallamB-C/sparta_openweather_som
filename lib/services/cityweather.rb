@@ -100,6 +100,10 @@ class CityWeather
     @city_weather["clouds"]["all"]
   end
 
+  def get_city_datetime
+    @city_weather["dt"]
+  end
+
 end
 
 cw = CityWeather.new
