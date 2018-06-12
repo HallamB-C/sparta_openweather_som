@@ -106,5 +106,9 @@ describe CityWeather do
       expect(@weather_service.get_city_sys_hash).to be_kind_of Hash
     end
 
+    it "should return a country code inside the sys hash" do
+      expect(@weather_service.get_city_sys_country_code).to be_kind_of String
+    end
+
   end
 end

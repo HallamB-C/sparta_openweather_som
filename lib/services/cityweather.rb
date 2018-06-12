@@ -108,6 +108,10 @@ class CityWeather
     @city_weather["sys"]
   end
 
+  def get_city_sys_country_code
+    @city_weather["sys"]["country"]
+  end
+
 end
 
 cw = CityWeather.new
