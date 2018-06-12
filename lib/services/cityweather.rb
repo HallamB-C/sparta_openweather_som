@@ -113,6 +113,3 @@ class CityWeather
   end
 
 end
-
-cw = CityWeather.new
-p cw.get_city_weather_data(get_random_city_name_from_code)
