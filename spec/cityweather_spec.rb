@@ -6,8 +6,14 @@ describe CityWeather do
 
     before(:all) do
       @weather_service = WeatherApp.new.city_weather_service
-      @cityname = CityGenerator.new.get_random_city_name_from_code
+      @randomcity = CityGenerator.new
+      @cityhash = @randomcity.get_random_city_from_code
+      @cityname = @randomcity.get_random_city_name_from_code
       @weather_service.get_city_weather_data(@cityname)
+    end
+
+    it "random city should return a hash" do
+      expect(@cityhash).to be_kind_of Hash
     end
 
     it "should return a city name" do
@@ -105,6 +111,7 @@ describe CityWeather do
     it "sys country code should be 2 letters long" do
       expect(@weather_service.get_city_sys_country_code.length).to eq 2
     end
+
 
   end
 end

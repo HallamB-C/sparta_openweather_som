@@ -21,6 +21,13 @@ class CityGenerator
     @yaml.sample
   end
 
+  def get_random_city_from_code
+    code = get_random_city_code
+    @json.each do |item|
+      return item if item["id"] == code
+    end
+  end
+
   def get_random_city_name_from_code
     code = get_random_city_code
     @json.each do |item|
@@ -34,5 +41,6 @@ bob = CityGenerator.new
 # bob.get_yml
 # bob.get_json
 p bob.get_random_city_code
+p bob.get_random_city_from_code
 p dog = bob.get_random_city_code
 p bob.get_random_city_name_from_code
