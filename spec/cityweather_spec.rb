@@ -12,8 +12,12 @@ describe CityWeather do
       @weather_service.get_city_weather_data(@cityname)
     end
 
-    it "random city should return a hash" do
+    it "should return a random city in has form" do
       expect(@cityhash).to be_kind_of Hash
+    end
+
+    it "should return a name inside the hash" do
+      expect(@cityname).to be_kind_of String
     end
 
     it "should return a city name" do
