@@ -98,7 +98,9 @@ describe CityWeather do
       expect(@weather_service.get_city_clouds_percentage).to be_kind_of Integer
     end
 
-
+    it "should return the date and time of encoding in unix format as an integer" do
+      expect(@weather_service.get_city_datetime).to be_kind_of Integer
+    end
 
 
   end
