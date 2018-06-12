@@ -1,4 +1,5 @@
 require_relative 'services/cityweather'
+require_relative 'services/lonlatweather'
 
 class WeatherApp
 
@@ -6,5 +7,8 @@ class WeatherApp
     CityWeather.new
   end
 
+  def lon_lat_weather_service
+    LonLatWeather.new
+  end
 
 end

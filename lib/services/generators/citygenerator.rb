@@ -35,6 +35,13 @@ class CityGenerator
     end
   end
 
+  def get_random_city_coords_from_code
+    code = get_random_city_code
+    @json.each do |item|
+      return item["coord"] if item["id"] == code
+    end
+  end
+
 end
 
 bob = CityGenerator.new
@@ -44,3 +51,4 @@ p bob.get_random_city_code
 p bob.get_random_city_from_code
 p dog = bob.get_random_city_code
 p bob.get_random_city_name_from_code
+p bob.get_random_city_coords_from_code
