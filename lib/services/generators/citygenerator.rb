@@ -43,12 +43,3 @@ class CityGenerator
   end
 
 end
-
-bob = CityGenerator.new
-# bob.get_yml
-# bob.get_json
-p bob.get_random_city_code
-p bob.get_random_city_from_code
-p dog = bob.get_random_city_code
-p bob.get_random_city_name_from_code
-p bob.get_random_city_coords_from_code

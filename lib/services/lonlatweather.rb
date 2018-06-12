@@ -4,103 +4,104 @@ require 'json'
 class LonLatWeather
   include HTTParty
 
+  attr_accessor :city_weather
+
   base_uri 'http://api.openweathermap.org'
 
   def get_lonlat_weather_data latin, lonin
-    @city_weather = JSON.parse(self.class.get("/data/2.5/weather?lat=#{latin}&lon=#{lonin}&APPID=8e8971bff65a4c73cf2e23345639ab97").body)
+    @lonlat_weather = JSON.parse(self.class.get("/data/2.5/weather?lat=#{latin}&lon=#{lonin}&APPID=8e8971bff65a4c73cf2e23345639ab97").body)
   end
 
   def get_lonlat_id
-    @city_weather["id"]
-  end
-
-  def get_lonlat_name
-    @city_weather["name"]
+    @lonlat_weather["id"]
   end
 
   def get_lonlat_coordinates
-    @city_weather["coord"]
+    @lonlat_weather["coord"]
   end
 
   def get_lonlat_weather
-    @city_weather["weather"]
+    @lonlat_weather["weather"]
   end
 
   def get_lonlat_weather_id
-    @city_weather["weather"][0]["id"]
+    @lonlat_weather["weather"][0]["id"]
   end
 
   def get_lonlat_weather_main
-    @city_weather["weather"][0]["main"]
+    @lonlat_weather["weather"][0]["main"]
   end
 
   def get_lonlat_weather_description
-    @city_weather["weather"][0]["description"]
+    @lonlat_weather["weather"][0]["description"]
   end
 
   def get_lonlat_base_parameter
-    @city_weather["base"]
+    @lonlat_weather["base"]
   end
 
   def get_lonlat_main_hash
-    @city_weather["main"]
+    @lonlat_weather["main"]
   end
 
   def get_lonlat_main_pressure
-    @city_weather["main"]["pressure"]
+    @lonlat_weather["main"]["pressure"]
   end
 
   def get_lonlat_main_humidity
-    @city_weather["main"]["humidity"]
+    @lonlat_weather["main"]["humidity"]
   end
 
   def get_lonlat_main_temp
-    @city_weather["main"]["temp"]
+    @lonlat_weather["main"]["temp"]
   end
 
   def get_lonlat_main_temp_min
-    @city_weather["main"]["temp_min"]
+    @lonlat_weather["main"]["temp_min"]
   end
 
   def get_lonlat_main_temp_max
-    @city_weather["main"]["temp_max"]
+    @lonlat_weather["main"]["temp_max"]
   end
 
   def get_lonlat_visibility
-    @city_weather["visibility"]
+    @lonlat_weather["visibility"]
   end
 
   def get_lonlat_wind_hash
-    @city_weather["wind"]
+    @lonlat_weather["wind"]
   end
 
   def get_lonlat_wind_speed
-    @city_weather["wind"]["speed"]
+    @lonlat_weather["wind"]["speed"]
   end
 
   def get_lonlat_wind_deg
-    @city_weather["wind"]["deg"]
+    @lonlat_weather["wind"]["deg"]
   end
 
   def get_lonlat_clouds_hash
-    @city_weather["clouds"]
+    @lonlat_weather["clouds"]
   end
 
   def get_lonlat_clouds_percentage
-    @city_weather["clouds"]["all"]
+    @lonlat_weather["clouds"]["all"]
   end
 
   def get_lonlat_datetime
-    @city_weather["dt"]
+    @lonlat_weather["dt"]
   end
 
   def get_lonlat_sys_hash
-    @city_weather["sys"]
+    @lonlat_weather["sys"]
   end
 
   def get_lonlat_sys_country_code
-    @city_weather["sys"]["country"]
+    @lonlat_weather["sys"]["country"]
   end
 
-
 end
+
+ll = LonLatWeather.new
+p ll.get_lonlat_weather_data(38.2,44.9)
+p ll.get_lonlat_weather_id

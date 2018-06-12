@@ -85,11 +85,11 @@ describe CityWeather do
     end
 
     it "should return a wind speed integer" do
-      expect(@weather_service.get_city_wind_speed).to be_kind_of Float
+      expect(@weather_service.get_city_wind_speed).to be_kind_of(Float).or be_kind_of(Integer).or eq nil
     end
 
     it "should return a wind degree" do
-      expect(@weather_service.get_city_wind_deg).to be_kind_of(Integer).or be_kind_of(Float)
+      expect(@weather_service.get_city_wind_deg).to be_kind_of(Integer).or be_kind_of(Float).or eq nil
     end
 
     it "should return a clouds hash" do

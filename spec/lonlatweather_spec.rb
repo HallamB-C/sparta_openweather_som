@@ -10,11 +10,17 @@ describe LonLatWeather do
       @citylon = @randomcity.get_random_city_coords_from_code["lon"]
       @citylat = @randomcity.get_random_city_coords_from_code["lat"]
       @data = @weather_service.get_lonlat_weather_data(@citylon,@citylat)
+      puts "looksies #{@data}"
     end
 
     it "should return a hash" do
       expect(@data).to be_kind_of Hash
     end
+
+    it "should return a weather hash" do
+      expect(@data.get_lonlat_weather).to be_kind_of Hash
+    end
+
 
 
   end
