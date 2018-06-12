@@ -6,8 +6,8 @@ describe CityWeather do
 
     before(:all) do
       @weather_service = WeatherApp.new.city_weather_service
-      @cityID = 14256
-      @weather_service.get_city_weather_data(@cityID)
+      @cityname = CityGenerator.new.get_random_city_name_from_code
+      @weather_service.get_city_weather_data(@cityname)
     end
 
     it "should return a city name" do
@@ -20,14 +20,6 @@ describe CityWeather do
 
     it "should return a coordinates hash" do
       expect(@weather_service.get_city_coordinates).to be_kind_of Hash
-    end
-
-    it "should return a longitude float" do
-      expect(@weather_service.get_city_longitude).to be_kind_of Float
-    end
-
-    it "should return a latitude float" do
-      expect(@weather_service.get_city_latitude).to be_kind_of Float
     end
 
     it "should return a weather array" do

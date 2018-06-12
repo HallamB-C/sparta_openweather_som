@@ -8,8 +8,8 @@ class CityWeather
 
   base_uri 'http://api.openweathermap.org'
 
-  def get_city_weather_data(city_code)
-    @city_weather = JSON.parse(self.class.get("/data/2.5/weather?id=#{city_code}&APPID=8e8971bff65a4c73cf2e23345639ab97").body)
+  def get_city_weather_data(city_name)
+    @city_weather = JSON.parse(self.class.get("/data/2.5/weather?q=#{city_name}&APPID=8e8971bff65a4c73cf2e23345639ab97").body)
   end
 
   def get_city_id
@@ -23,14 +23,14 @@ class CityWeather
   def get_city_coordinates
     @city_weather["coord"]
   end
-
-  def get_city_longitude
-    @city_weather["coord"]["lon"]
-  end
-
-  def get_city_latitude
-    @city_weather["coord"]["lat"]
-  end
+  #
+  # def get_city_longitude
+  #   @city_weather["coord"]["lon"]
+  # end
+  #
+  # def get_city_latitude
+  #   @city_weather["coord"]["lat"]
+  # end
 
   def get_city_weather
     @city_weather["weather"]
@@ -115,9 +115,4 @@ class CityWeather
 end
 
 cw = CityWeather.new
-p cw.get_city_weather_data(14256)
-p cw.get_city_name
-p cw.get_city_coordinates
-p cw.get_city_longitude
-p cw.get_city_latitude
-p cw.get_city_weather_id
+p cw.get_city_weather_data(get_random_city_name_from_code)
