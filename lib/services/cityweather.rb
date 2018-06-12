@@ -80,6 +80,18 @@ class CityWeather
     @city_weather["visibility"]
   end
 
+  def get_city_wind_hash
+    @city_weather["wind"]
+  end
+
+  def get_city_wind_speed
+    @city_weather["wind"]["speed"]
+  end
+
+  def get_city_wind_deg
+    @city_weather["wind"]["deg"]
+  end
+
 end
 
 cw = CityWeather.new

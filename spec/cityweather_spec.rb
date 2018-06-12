@@ -78,6 +78,18 @@ describe CityWeather do
       expect(@weather_service.get_city_visibility).to be_kind_of Integer
     end
 
+    it "should return a wind hash" do
+      expect(@weather_service.get_city_wind_hash).to be_kind_of Hash
+    end
+
+    it "should return a wind speed integer" do
+      expect(@weather_service.get_city_wind_speed).to be_kind_of Float
+    end
+
+    it "should return a wind degree" do
+      expect(@weather_service.get_city_wind_deg).to be_kind_of Integer
+    end
+
 
   end
 end
