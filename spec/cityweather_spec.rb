@@ -110,5 +110,9 @@ describe CityWeather do
       expect(@weather_service.get_city_sys_country_code).to be_kind_of String
     end
 
+    it "sys country code should be 2 letters long" do
+      expect(@weather_service.get_city_sys_country_code.length).to eq 2
+    end
+
   end
 end
