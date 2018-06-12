@@ -76,6 +76,10 @@ class CityWeather
     @city_weather["main"]["temp_max"]
   end
 
+  def get_city_visibility
+    @city_weather["visibility"]
+  end
+
 end
 
 cw = CityWeather.new

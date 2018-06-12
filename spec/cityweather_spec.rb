@@ -55,15 +55,27 @@ describe CityWeather do
     end
 
     it "should return a main pressure" do
-      expect(@weather_service.get_city_main_pressure).to be be_kind_of Integer
+      expect(@weather_service.get_city_main_pressure).to be_kind_of Integer
     end
 
     it "should return a main humidity" do
-      expect(@weather_service.get_city_main_humidity).to be be_kind_of Integer
+      expect(@weather_service.get_city_main_humidity).to be_kind_of Integer
     end
 
     it "should return a main temperature" do
-      expect(@weather_service.get_city_main_temp).to be_kind_of Integer
+      expect(@weather_service.get_city_main_temp).to be_kind_of Float
+    end
+
+    it "should return a main temperature minimum" do
+      expect(@weather_service.get_city_main_temp_min).to be_kind_of Float
+    end
+
+    it "should return a main temperature maximum" do
+      expect(@weather_service.get_city_main_temp_max).to be_kind_of Float
+    end
+
+    it "should return a visibility integer" do
+      expect(@weather_service.get_city_visibility).to be_kind_of Integer
     end
 
 
