@@ -102,6 +102,9 @@ describe CityWeather do
       expect(@weather_service.get_city_datetime).to be_kind_of Integer
     end
 
+    it "should return a sys hash" do
+      expect(@weather_service.get_city_sys_hash).to be_kind_of Hash
+    end
 
   end
 end

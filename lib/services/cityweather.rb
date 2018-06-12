@@ -104,6 +104,10 @@ class CityWeather
     @city_weather["dt"]
   end
 
+  def get_city_sys_hash
+    @city_weather["sys"]
+  end
+
 end
 
 cw = CityWeather.new
