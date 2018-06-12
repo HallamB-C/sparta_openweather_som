@@ -90,6 +90,16 @@ describe CityWeather do
       expect(@weather_service.get_city_wind_deg).to be_kind_of Integer
     end
 
+    it "should return a clouds hash" do
+      expect(@weather_service.get_city_clouds_hash).to be_kind_of Hash
+    end
+
+    it "should return a clouds percentage value as an integer" do
+      expect(@weather_service.get_city_clouds_percentage).to be_kind_of Integer
+    end
+
+
+
 
   end
 end

@@ -92,6 +92,14 @@ class CityWeather
     @city_weather["wind"]["deg"]
   end
 
+  def get_city_clouds_hash
+    @city_weather["clouds"]
+  end
+
+  def get_city_clouds_percentage
+    @city_weather["clouds"]["all"]
+  end
+
 end
 
 cw = CityWeather.new
